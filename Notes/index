@@ -19,3 +19,7 @@ change thepackage.json script => ("start":"nodemon index.js")
 
 Now initializing Git repo
 git init
+git remote add origin "https://github.com/ermishu/Codieal.git"
+git status
+git add .
+git commit -m "First commit"
