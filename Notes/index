@@ -1,0 +1,21 @@
+create a folder "My App"
+open the terminal
+Command "npm init" for package.json
+create all folder{
+    controllers
+    models
+    views
+    routes
+    config
+    asstes{
+        css
+        js
+        images
+    }
+}
+command npm i express
+command npm i nodemon
+change thepackage.json script => ("start":"nodemon index.js")
+
+Now initializing Git repo
+git init
