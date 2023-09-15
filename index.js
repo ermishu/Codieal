@@ -1,6 +1,17 @@
 const express = require('express');
 const port = 3000;
 const app = express();
+const expressLayouts = require('express-ejs-layouts')
+
+// use static file 
+app.use(express.static('./assets'))
+
+// use layout library to add Layout in Views 
+app.use(expressLayouts);
+// extract style and script from sub pages into the layout
+app.set('layout extractStyles',true);
+app.set('layout extractScript',true);
+
 
 //use express router
 app.use('/',require('./routes'))

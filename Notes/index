@@ -23,3 +23,6 @@ git remote add origin "https://github.com/ermishu/Codieal.git"
 git status
 git add .
 git commit -m "First commit"
+
+
+Install Express ejs layouts"npm i express-ejs-layouts"
