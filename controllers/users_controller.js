@@ -40,6 +40,7 @@ module.exports.create = (req, res) => {
             if (!user) {
                 User.create(req.body)
                     .then(user => {
+                        console.log("User Created Successfully", req.body.name)
                         return res.redirect('/users/sign-in');
                     })
                     .catch(err => {
@@ -57,6 +58,34 @@ module.exports.create = (req, res) => {
 }
 
 //Sign-In and create a session for the user
-module.exports.somethingels = (req, res) => {
-    //Todo Later
+module.exports.createSession = (req, res) => {
+    //find the user
+    User.findOne({email:req.body.email})
+    //handle user forund
+    .then(user => {
+        //handle user password which don't match
+        if(user){
+            if(user.password !=req.body.password){
+                return res.redirect('back');
+            }
+            //handle session create
+            res.cookie('user_id',user.id);
+            console.log("User LogedIn Successfully", req.body.name)
+            return res.redirect('/users/profile');
+        }else{
+            //handle user not found
+            return res.redirect('back');
+        }
+
+    })
+    
+    .catch(err => {
+        console.log("Error in Finding user in sigining in",err);
+        return res.redirect('back');
+    })
+
+    
+
+    
+    
 }
