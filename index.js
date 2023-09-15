@@ -11,7 +11,7 @@ app.use(express.static('./assets'))
 app.use(expressLayouts);
 // extract style and script from sub pages into the layout
 app.set('layout extractStyles',true);
-app.set('layout extractScript',true);
+app.set('layout extractScripts',true);
 
 
 //use express router
@@ -19,7 +19,7 @@ app.use('/',require('./routes'))
 
 //set up the view engine
 app.set('view engine','ejs')
-app.set('views','./views')
+app.set('views',['./views','./views/home','./views/login','./views/profile'])
 
 
 app.listen(port, (err) => {
