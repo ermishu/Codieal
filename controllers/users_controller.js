@@ -1,6 +1,5 @@
 const User = require('../models/user')
 
-
 // Create action controller to show the profile page 
 module.exports.profile = (req, res) => {
 
@@ -28,9 +27,9 @@ module.exports.profile = (req, res) => {
     }else{
         return res.redirect('/users/sign-in');
     }
+ 
     
 }
-
 
 // Render the sign in page
 module.exports.signIn = (req, res) => {
@@ -55,7 +54,6 @@ module.exports.signUp = (req, res) => {
 module.exports.create = (req, res) => {
     //handle confirmation password
     if (req.body.password != req.body.confirm_password) {
-        console
         return res.redirect('back');
     }
 
@@ -93,6 +91,7 @@ module.exports.create = (req, res) => {
             return res.redirect('back');
         })
 }
+
 
 //Sign-In and create a session for the user
 module.exports.createSession = (req, res) => {
@@ -132,3 +131,4 @@ module.exports.signOut = (req,res) => {
     res.clearCookie('user_id')
     return res.redirect('/users/sign-in');
 }
+

@@ -5,6 +5,7 @@ const expressLayouts = require('express-ejs-layouts')
 const db = require('./config/mongoose')
 const cookieParser = require('cookie-parser');
 
+
 // Reading Through the post request
 app.use(express.urlencoded())
 
@@ -22,12 +23,12 @@ app.set('layout extractStyles',true);
 app.set('layout extractScripts',true);
 
 
-//use express router
-app.use('/',require('./routes'))
-
 //set up the view engine
 app.set('view engine','ejs')
 app.set('views',['./views','./views/home','./views/login','./views/profile'])
+
+//use express router
+app.use('/',require('./routes'))
 
 
 app.listen(port, (err) => {
