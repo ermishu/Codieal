@@ -20,14 +20,3 @@ module.exports.signUp = (req,res) => {
         title:"Codieal | Sign-Up"
     })
 }
-
-
-// get the sign up data
-module.exports.create = (req,res) => {
-    //Todo later
-}
-
-//Sign-In and create a session for the user
-module.exports.create = (req,res) => {
-    //Todo Later
-}
